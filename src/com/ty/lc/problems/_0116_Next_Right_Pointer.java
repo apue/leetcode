@@ -7,6 +7,17 @@ public class _0116_Next_Right_Pointer {
         if (root == null) {
             return null;
         }
+        connectNodes(root.left, root.right);
         return root;
+    }
+
+    private static void connectNodes(Node left, Node right) {
+        if (left == null || right == null) {
+            return;
+        }
+        left.next = right;
+        connectNodes(left.left, left.right);
+        connectNodes(left.right, right.left);
+        connectNodes(right.left, right.right);
     }
 }
