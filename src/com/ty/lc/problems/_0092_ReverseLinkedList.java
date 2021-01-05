@@ -1,4 +1,4 @@
-package com.ty.lc.base.problems;
+package com.ty.lc.problems;
 
 import com.ty.lc.base.ListNode;
 
