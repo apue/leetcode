@@ -14,6 +14,12 @@ public class TreeNode {
         val = x;
     }
 
+    public TreeNode(int x, TreeNode left, TreeNode right) {
+        val = x;
+        this.left = left;
+        this.right = right;
+    }
+
     public static void BFS(TreeNode root) {
         List<List<Integer>> ret = new ArrayList<>();
         depth(root, 1, ret);
