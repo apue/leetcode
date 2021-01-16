@@ -22,6 +22,17 @@ public class _0092_ReverseLinkedList {
         return last;
     }
 
+    public static ListNode reverse2(ListNode head) {
+        ListNode prev = null, curr = head;
+        while (curr != null) {
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
+    }
+
     ListNode successor = null;
 
     public ListNode reverseN(ListNode head, int n) {
@@ -43,6 +54,8 @@ public class _0092_ReverseLinkedList {
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = new ListNode(5);
         ListNode.traverse(head);
+        ListNode reversed = reverse2(head);
+        ListNode.traverse(reversed);
         _0092_ReverseLinkedList rev = new _0092_ReverseLinkedList();
         ListNode head2 = rev.reverseBetween(head, 2, 4);
         ListNode.traverse(head2);

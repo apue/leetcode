@@ -21,4 +21,9 @@ public class ListNode {
             System.out.println("NULL");
         }
     }
+
+    @Override
+    public String toString() {
+        return Integer.toString(val);
+    }
 }
