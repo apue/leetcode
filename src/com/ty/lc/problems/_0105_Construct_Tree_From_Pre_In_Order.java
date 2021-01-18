@@ -2,8 +2,6 @@ package com.ty.lc.problems;
 
 import com.ty.lc.base.TreeNode;
 
-import java.awt.event.HierarchyBoundsAdapter;
-
 import static com.ty.lc.base.TreeNode.BFS;
 
 public class _0105_Construct_Tree_From_Pre_In_Order {

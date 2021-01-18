@@ -22,6 +22,34 @@ public class _0092_ReverseLinkedList {
         return last;
     }
 
+    public ListNode reverse3(ListNode a, ListNode b) {
+        ListNode prev = null, curr = a;
+        while (curr != b) {
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
+    }
+
+    public ListNode reverseKGroup(ListNode head, int k) {
+        if (head == null) {
+            return null;
+        }
+        ListNode a = head, b = head;
+
+        for (int i = 0; i < k; i++) {
+            if (b == null) {
+                return head;
+            }
+            b = b.next;
+        }
+        ListNode newHead = reverse3(a, b);
+        a.next = reverseKGroup(b, k);
+        return newHead;
+    }
+
     public static ListNode reverse2(ListNode head) {
         ListNode prev = null, curr = head;
         while (curr != null) {
